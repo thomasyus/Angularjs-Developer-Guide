@@ -40,7 +40,7 @@ AngularJS通过为开发者呈现一个更高层次的抽象来简化应用的�
 *   根据模型计算新的值；
 *   将输出格式本地化。
 
-index.html:
+**index.html:**
 
     <!doctype html>
     <html ng-app>
@@ -67,7 +67,7 @@ index.html:
     </html>
     
 
-script.js:
+**script.js:**
 
     function InvoiceCntl($scope) {
         $scope.qty = 1;
@@ -75,7 +75,7 @@ script.js:
     }
     
 
-end-to-end test:
+**end-to-end test:**
 
     it('should show of angular binding', function() {
         expect(binding('qty * cost')).toEqual('$19.95');
