@@ -82,10 +82,8 @@ AngularJS生来自带一些对创建APP非常有用的**指令**。我们也希�
 		}
 	 });
     
-<script type="text/javascript">angular.module('drag',[]).directive('draggable',function($document){var startX=0,startY=0,x=0,y=0;return function(scope,element,attr){element.css({position:'relative',border:'1px solid red',backgroundColor:'lightgrey',cursor:'pointer'});element.bind('mousedown',function(event){startX=event.screenX-x;startY=event.screenY-y;$document.bind('mousemove',mousemove);$document.bind('mouseup',mouseup)});function mousemove(event){y=event.screenY-startY;x=event.screenX-startX;element.css({top:y+'px',left:x+'px'})}function mouseup(){$document.unbind('mousemove',mousemove);$document.unbind('mouseup',mouseup)}}});</script>
-<fieldset class="angularjs-demo" ng-app="drag">
-<legend>运行效果</legend>
-<span draggable>Drag ME</span>
+<fieldset class="angularjs-demo">
+    <legend>运行效果</legend>
 </fieldset>
 
 通过加入`draggable`属性可以让任何HTML元素都实现这个新的行为。我们这种改进的优美之处在于我们给了浏览器新能力。我们用了一种只要开发者熟悉HTML规则，就会举得很自然的方式扩展了浏览器理解新行为新语法的能力。
