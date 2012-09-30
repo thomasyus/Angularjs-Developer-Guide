@@ -6,7 +6,6 @@
 了解AngularJS双向绑定的关键在于了解`ngModel`指令。这个指令通过动态将model和view互相映射，来实现双向绑定。此外它还提供API给其它指令来增强它们的行为。
 
 ###Source
-
 index.html:
 
 	<!doctype html>
