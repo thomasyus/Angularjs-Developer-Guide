@@ -12,7 +12,7 @@
 
 3.  依赖能在需要时被导入。
 
-前两种方式都不是很好，因为它们需要对依赖硬编码，使得修改依赖的时候变得困难。特别是在测试的时候不好办，因为对某个部分进行孤立的测试常常需要模拟它的依赖。
+前两种方式都不是很好，因为它们需要对依赖硬编码，使得修改依赖的时候变得困难。特别是在测试的时候不好办，因为对某个部分进行孤立的测试常常需要模拟它的依赖。<!--more-->
 
 第三种方式是最好的，因为它不必在组件中去主动需找和获取依赖，而是由外界将依赖传入。
 
@@ -164,3 +164,11 @@
 	  run(['depService', function(depService) {
 	    ...
 	  }]);
+
+
+<span class="doc-copyright">**版权声明：** **中文文档[AngularJS中文社区][]** && **英文文档[AngularJS官网][]** && **代码许可[The MIT License][]** && **文档许可[CC BY 3.0][]**</span>
+
+ [AngularJS中文社区]: http://angularjs.cn/
+ [AngularJS官网]: http://angularjs.org/
+ [The MIT License]: http://baike.baidu.com/view/3159946.htm
+ [CC BY 3.0]: http://creativecommons.org/licenses/by/3.0/deed.zh

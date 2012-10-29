@@ -1,42 +1,41 @@
 ##概览
-本章描述了IE在处理自定义的HTML属性和标签时的一些独特之处。如果你要让你的angular应用兼容IE8和IE8一下的版本的话，你需要仔阅读本章。
+本章描述了IE在处理自定义的HTML属性和标签时的一些独特之处。如果你要让你的AngularJS应用兼容IE8和IE8以下的版本的话，你需要仔阅读本章。
 
 简易版
 
-要让你的angular应用在IE中正常运行你必须：
+要让你的AngularJS应用在IE中正常运行你必须：
 
 1. 确保JSON字符串能被正常解析（IE7需要），你可以使用JSON2或者JSON3来实现。
 
-2. 你不能使用自定义的元素标签，如`<ng:view>`（你只能使用属性的形式，如`<div ng-view>`），或者
+2. 你不能使用自定义的元素标签，如`<ng:view>`（你只能使用属性的形式，如`<div ng-view>`），或者，
 
-3. 如果你用了自定义的标签名，那你必须按照以下步骤做才能保证IE正常运行：
+3. 如果你用了自定义的标签名，那你必须按照以下步骤做才能保证IE正常运行：<!--more-->
 
-	<html xmlns:ng="http://angularjs.org">
-	  <head>
-	    <!--[if lte IE 8]>
-	      <script>
-	        document.createElement('ng-include');
-	        document.createElement('ng-pluralize');
-	        document.createElement('ng-view');
-	 
-	        // Optionally these for CSS
-	        document.createElement('ng:include');
-	        document.createElement('ng:pluralize');
-	        document.createElement('ng:view');
-	      </script>
-	    <![endif]-->
-	  </head>
-	  <body>
-	    ...
-	  </body>
-	</html>
+        <html xmlns:ng="http://angularjs.org">
+         <head>
+          <!--[if lte IE 8]>
+            <script>
+               document.createElement('ng-include');
+               document.createElement('ng-pluralize');
+               document.createElement('ng-view');
+               // Optionally these for CSS
+              document.createElement('ng:include');
+              document.createElement('ng:pluralize');
+              document.createElement('ng:view');
+             </script>
+          <![endif]-->
+        </head>
+        <body>
+            ...
+        </body>
+        </html>
 
 
 其中**重要的部分**是:
 
-*  xmlns:ng - 命名空间 - 你需要为你使用或者准备使用的每一个自定义标签准备一个命名空间。
+*  `xmlns:ng` - 命名空间 - 你需要为你使用或者准备使用的每一个自定义标签准备一个命名空间。
 
-*  document.createElement(你的标签名) - 自定义标签的创建 - 因为这只是老版本IE的一个问题，所以你需要根据情况使用。对于每一个你没有使用命名空间或者HTML中没有定义的标签，你需要预先声明它彩色能使IE正常工作。
+*  `document.createElement`(你的标签名) - 自定义标签的创建 - 因为这只是老版本IE的一个问题，所以你需要根据情况使用。对于每一个你没有使用命名空间或者HTML中没有定义的标签，你需要预先声明它彩色能使IE正常工作。
 
 ##详细版
 IE处理非标准标签名会产生问题。问题可以分为两类，每类都有自己的解决方法。
@@ -88,3 +87,10 @@ IE处理非标准标签名会产生问题。问题可以分为两类，每类都
 
 ## 自定义标签名元素的CSS样式
 要让CSS选择器能正确使用自定义元素的话，先要用`document.createElement('my-tag')`来创建一下元素，不管有没有XML命名空间。
+
+<span class="doc-copyright">**版权声明：** **中文文档[AngularJS中文社区][]** && **英文文档[AngularJS官网][]** && **代码许可[The MIT License][]** && **文档许可[CC BY 3.0][]**</span>
+
+ [AngularJS中文社区]: http://angularjs.cn/
+ [AngularJS官网]: http://angularjs.org/
+ [The MIT License]: http://baike.baidu.com/view/3159946.htm
+ [CC BY 3.0]: http://creativecommons.org/licenses/by/3.0/deed.zh

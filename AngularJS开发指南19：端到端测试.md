@@ -128,3 +128,10 @@ element(selector, label).{method}(key, value)
 返回执行指定jquery选择器选择的元素执行方法的结果，传递key和value做参数。方法可以是：attr, prop, css。参数中label是用来检测输出的。
 
 Javascript是动态类型的语言，它在表达式上很强大，但也使得编译器对它没有任何帮助。因此，我们十分强烈地觉得它需要强大的测试工具。我们已经建立这个强大的工具，所以，没有利用不用它了。
+
+<span class="doc-copyright">**版权声明：** **中文文档[AngularJS中文社区][]** && **英文文档[AngularJS官网][]** && **代码许可[The MIT License][]** && **文档许可[CC BY 3.0][]**</span>
+
+ [AngularJS中文社区]: http://angularjs.cn/
+ [AngularJS官网]: http://angularjs.org/
+ [The MIT License]: http://baike.baidu.com/view/3159946.htm
+ [CC BY 3.0]: http://creativecommons.org/licenses/by/3.0/deed.zh

@@ -2,11 +2,10 @@
 
 用户能通过表单和表单控件提供验证的服务，知道自己的输入是否合法。这样能让用户交互变得友好，因为用户能通过反馈来修正自己的错误。不过，虽然客户端的验证能够起到很大作用，但也很容易被绕过，所以不能完全依靠客户端验证。 要建立安全的应用，服务器端验证还是必不可少的。
 
-###简单表单
-了解AngularJS双向绑定的关键在于了解`ngModel`指令。这个指令通过动态将model和view互相映射，来实现双向绑定。此外它还提供API给其它指令来增强它们的行为。
+##简单表单
+了解AngularJS双向绑定的关键在于了解`ngModel`指令。这个指令通过动态将model和view互相映射，来实现双向绑定。此外它还提供API给其它指令来增强它们的行为。<!--more-->
 
-###Source
-index.html:
+**index.html：**
 
 	<!doctype html>
 	<html ng-app>
@@ -30,7 +29,7 @@ index.html:
 	  </body>
 	</html>
 
-script.js:
+**script.js：**
 
 	function Controller($scope) {
 	  $scope.master= {};
@@ -46,11 +45,10 @@ script.js:
 	  $scope.reset();
 	}
 
-###Demo
 
 注意例子中的`novalidate`是用来屏蔽浏览器本身的验证功能的。
 
-使用css的类名
+##使用css的类名
 
 为了能美化表单和表单元素，ngModel指令会自动为元素添加以下css类：
 
@@ -62,9 +60,7 @@ script.js:
 
 下面的例子演示了如何使用CSS来显示表单的验证结果。其中的user.name和user.email是必填项，它们没有被填写就提交时，底色会变红。这能避免用户注意力一开始就被分散。只有在与界面交互之后才显示错误。
 
-###Source
-
-index.html:
+**index.html：**
 
 	<!doctype html>
 	<html ng-app>
@@ -97,7 +93,7 @@ index.html:
 	  </body>
 	</html>
 
-script.js:
+**script.js：**
 
 	function Controller($scope) {
 	  $scope.master= {};
@@ -113,9 +109,8 @@ script.js:
 	  $scope.reset();
 	}
 
-###Demo
 
-###与表单的状态或者表单元素状态绑定
+##与表单的状态或者表单元素状态绑定
 一个表单就是一个`FormController`的实例。表单实例可以通过name属性选择性地公开到作用域中。同样的，一个表单控件也是一个`NgModelController`的实例。表单控件也能同样的被公开到作用域中。这意味视图能通过绑定的基本功能获取表单或者表单控件的状态。
 
 这些特点让我们能将上面的例子改造成下面这样：
@@ -124,10 +119,8 @@ script.js:
 *  只有当表单有改变并且改变的值都是合法的，保存按钮才会被显示出来。
 *  能自定义user.email和user.agree的错误信息。
 
-
-###Source
  
-index.html:
+**index.html：**
 
 	<!doctype html>
 	<html ng-app>
@@ -164,7 +157,7 @@ index.html:
 	</html>
 
 
-script.js:
+**script.js：**
 
 	function Controller($scope) {
 	  $scope.master= {};
@@ -184,7 +177,6 @@ script.js:
 	  $scope.reset();
 	}
 
-###Demo
 
 ##自定义验证
 AngularJS实现了大部分常见的html5表单输入元素(text, number, url, email, radio, checkbox)，也实现了很多用于验证的指令(required, pattern, minlength, maxlength, min, max)。
@@ -201,8 +193,7 @@ AngularJS实现了大部分常见的html5表单输入元素(text, number, url, e
 
 *  第二个指令是一个“智能浮点(smart-float)”。它能把"1.2"或者"1,2"都转化为合法的浮点数"1.2"。注意，这里我们不能使用“数字输入类型”，因为H支持TML5的浏览器不允许用户输入像"1,2"这样的非法值。
 
-###Source
-index.html:
+**index.html：**
 
 	<!doctype html>
 	<html ng-app="form-example1">
@@ -234,7 +225,7 @@ index.html:
 	  </body>
 	</html>
 
-script.js:
+**script.js：**
 
 	var app = angular.module('form-example1', []);
 	 
@@ -277,7 +268,6 @@ script.js:
 	});
 
 
-###Demo
 
 ##实现自定义的表单控件(用ngModel)
 AngularJS已经实现了所有基本的HTML表单控件（input,select,textarea），对于大部分情况应该已经够了。但是，你还是可以通过写指令来实现你自己的表单控件。
@@ -289,9 +279,8 @@ AngularJS已经实现了所有基本的HTML表单控件（input,select,textarea�
 
 下面的例子演示了如何添加一个“内容可编辑”的数据双向绑定的元素。
 
-###Source
 
-index.html:
+**index.html：**
 
 	<!doctype html>
 	<html ng-app="form-example2">
@@ -312,7 +301,7 @@ index.html:
 	  </body>
 	</html>
 
-script.js:
+**script.js：**
 
 	angular.module('form-example2', []).directive('contenteditable', function() {
 	  return {
@@ -335,3 +324,10 @@ script.js:
 	    }
 	  };
 	});
+
+<span class="doc-copyright">**版权声明：** **中文文档[AngularJS中文社区][]** && **英文文档[AngularJS官网][]** && **代码许可[The MIT License][]** && **文档许可[CC BY 3.0][]**</span>
+
+ [AngularJS中文社区]: http://angularjs.cn/
+ [AngularJS官网]: http://angularjs.org/
+ [The MIT License]: http://baike.baidu.com/view/3159946.htm
+ [CC BY 3.0]: http://creativecommons.org/licenses/by/3.0/deed.zh
