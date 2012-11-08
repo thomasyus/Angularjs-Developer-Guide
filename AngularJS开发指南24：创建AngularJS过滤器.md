@@ -1,9 +1,8 @@
 写一个你自己的过滤器非常容易：在你的模块中注册一个新的过滤器（可注入的）工厂函数就行了。这个工厂函数必须放回一个新的过滤器函数，这个过滤函数的第一个参数接受的是输入。任何过滤器参数都会被当成附加的参数传递给过滤器。
 
-下面的例子展示了逆转字符串文本。另外，它有条件地将文本大写并填上颜色。
+下面的例子展示了逆转字符串文本。另外，它有条件地将文本大写并填上颜色。<!--more-->
 
-##Source
-index.html:
+**index.html:**
 
 	<!doctype html>
 	<html ng-app="MyReverseModule">
@@ -21,7 +20,7 @@ index.html:
 	  </body>
 	</html>
 
-script.js:
+**script.js:**
 
 	angular.module('MyReverseModule', []).
 	  filter('reverse', function() {
@@ -42,7 +41,7 @@ script.js:
 	  $scope.greeting = 'hello';
 	}
 
-End to end test:
+**End to end test:**
 
 	it('should reverse greeting', function() {
 	  expect(binding('greeting|reverse')).toEqual('olleh');

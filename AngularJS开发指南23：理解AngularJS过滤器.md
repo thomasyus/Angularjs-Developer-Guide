@@ -4,7 +4,7 @@ AngularJS过滤器用来格式化输出给用户的数据。除了格式化数�
 
     name | uppercase
 
-这个表达式执行时会将name的值传递给uppercase过滤器。
+这个表达式执行时会将name的值传递给uppercase过滤器。<!--more-->
 
 ##相关主题
 *  使用AngularJS过滤器
