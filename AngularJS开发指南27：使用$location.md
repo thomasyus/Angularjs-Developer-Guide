@@ -10,7 +10,7 @@ $location服务解析地址栏中的URL（基于window.location），让你在�
 	*  改变地址栏
 	*  点击了后退按钮（或者点击了历史链接）
 	*  点击了一个链接
-*  一系列方法来获取URL对象的具体内容用（protocol, host, port, path, search, hash）.
+*  一系列方法来获取URL对象的具体内容用（protocol, host, port, path, search, hash）.<!--more-->
 
 ###Comparing $location to window.location
 <table>
