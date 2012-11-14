@@ -1,6 +1,6 @@
 将服务用作控制器的依赖和将服务用作其他服务的依赖很类似。
 
-因为Javascript是一种动态语言，依赖注入系统无法通过静态类型来知道应该注入什么样的服务（静态类型语言就可以）。所以，你应该$inject的属性来指定服务的名字，这个属性是一个包含这需要注入的服务的名字字符串的数组。名字要和服务注册到系统时的名字匹配。服务的名称的顺序也很重要：当执行工场函数时传递的参数是依照数组里的顺序的。但是工场函数中参数的名字不重要，但最好还是和服务本身的名字一样，下面展示了这样的好处:
+因为Javascript是一种动态语言，依赖注入系统无法通过静态类型来知道应该注入什么样的服务（静态类型语言就可以）。所以，你应该$inject的属性来指定服务的名字，这个属性是一个包含这需要注入的服务的名字字符串的数组。名字要和服务注册到系统时的名字匹配。服务的名称的顺序也很重要：当执行工场函数时传递的参数是依照数组里的顺序的。但是工场函数中参数的名字不重要，但最好还是和服务本身的名字一样，下面展示了这样的好处:<!--more-->
 
 	function myController($loc, $log) {
 	this.firstMethod = function() {
@@ -15,8 +15,7 @@
 	// which services to inject ?
 	myController.$inject = ['$location', '$log'];
 
-###Source 
-index.html:
+**index.html:**
 
 	<!doctype html>
 	<html ng-app="MyServiceModule">
@@ -33,7 +32,7 @@ index.html:
 	  </body>
 	</html>
 
-script.js:
+**script.js:**
 
 	angular.
 	 module('MyServiceModule', []).
@@ -53,23 +52,21 @@ script.js:
 	    notifyService(msg);
 	  };
 	}
-	 
-	myController.$inject = ['$scope','notify'];
 	
+	myController.$inject = ['$scope','notify'];
 
-end to end test：
+**end to end test：**
 
 	it('should test service', function() {
-	  expect(element(':input[ng\\:model="message"]').val()).toEqual('test');
+		expect(element(':input[ng\\:model="message"]').val()).toEqual('test');
 	});
 
-###Demo
+
 
 ###隐式依赖注入
 AngularJS依赖注入系统的新特性使得AngularJS可以通过参数名称来判断依赖。让们重写上面的例子，展示一下隐式地依赖$window, $scope：
 
-###Source
-index.html:
+**index.html:**
 
 
 	<!doctype html>
@@ -87,7 +84,7 @@ index.html:
 	  </body>
 	</html>
 
-script.js:
+**script.js:**
 
 	angular.
 	 module('MyServiceModuleDI', []).
@@ -108,7 +105,6 @@ script.js:
 	  };
 	
 
-###Demo
 
 但是如你要压缩你的代码，你的变量名会被重命名，你就只能显示地指定依赖了。
 
