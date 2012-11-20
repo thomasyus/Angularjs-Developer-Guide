@@ -1,4 +1,4 @@
-The following is a unit test for the 'notify' service in the 'Dependencies' example in Creating Angular Services. The unit test example uses Jasmine spy (mock) instead of a real browser alert.下面是“创建AngularJS服务”一章中“依赖”例子里的“notify”服务的单元测试。测试用使用了Jasmine spy替代了真是浏览器的alert。
+下面是“创建AngularJS服务”一章中“依赖”例子里的“notify”服务的单元测试。测试用使用了Jasmine spy替代了真实浏览器的alert。<!--more-->
 
 	var mock, notify;
 	 
