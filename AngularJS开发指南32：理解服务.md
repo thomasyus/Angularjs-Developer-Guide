@@ -2,7 +2,7 @@ AngularJS服务是一种能执行一个常见操作的单例，比如$http服务
 
 要使用AngularJS服务，你只需要在需要的地方（控制器，或其他服务）指出依赖就行了。AngularJS的依赖注入系统会帮你完成剩下的事情。它负责实例化，查找左右依赖，并且按照工场函数要求的样子传递依赖。
 
-AngularJS通过“构造器注入”来注入依赖（通过工场函数来传递依赖）。以为Javascript是动态类型语言，AngularJS无法通过静态类型来识别服务，所以你必须使用$inject属性来显式地指定依赖。比如:
+AngularJS通过“构造器注入”来注入依赖（通过工场函数来传递依赖）。以为Javascript是动态类型语言，AngularJS无法通过静态类型来识别服务，所以你必须使用$inject属性来显式地指定依赖。比如:<!--more-->
 
     myController.$inject = ['$location'];
 
