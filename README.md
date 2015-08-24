@@ -1,3 +1,5 @@
+fork from https://gitcafe.com/Angularjs/Angularjs-Developer-Guide.git
+
 AngularJS.cn是一个专业的AngularJS中文开源技术社区，致力于AngularJS的技术学习、交流和研究。
 
 我们非常欢迎更多对AngularJS感兴趣的朋友[加入][1]！
